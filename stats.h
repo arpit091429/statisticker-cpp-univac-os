@@ -41,9 +41,9 @@ namespace Statistics {
     template<typename T>
     void stat<T> ComputeStatistics(const vector<T>& data,struct computeValue<T>& computeValue)
     {
-        computeAverage(data,computeValue);
-        computeMax(data,computeValue);
-        computeMin(data,computeValue);
+        ComputeAverage(data,computeValue);
+        ComputeMax(data,computeValue);
+        ComputeMin(data,computeValue);
         return computeValue;
     }
 }
