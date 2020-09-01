@@ -4,6 +4,7 @@
 #include "stats.h"
 #include <bits/stdc++.h>
 using namespace std;
+#include<vector>
 #include <cmath>
 
 TEST_CASE("reports average, minimum and maximum") {
