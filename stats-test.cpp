@@ -2,11 +2,15 @@
 
 #include "catch.hpp"
 #include "stats.h"
+#include <bits/stdc++.h>
 using namespace std;
 #include <cmath>
 
 TEST_CASE("reports average, minimum and maximum") {
-    auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
+    Statistics:: Stat<float> computedValue;
+    vector<float> data{1.0,3.2,5.4,6.3,7.2};
+    Statistics:: stat<float> computedStats=Statistics:: computeStatistics(computedValue,data)
+    //auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
     float epsilon = 0.001;
     REQUIRE(std::abs(computedStats.average - 4.525) < epsilon);
     REQUIRE(std::abs(computedStats.max - 8.9) < epsilon);
@@ -14,7 +18,10 @@ TEST_CASE("reports average, minimum and maximum") {
 }
 
 TEST_CASE("average is NaN for empty array") {
-    auto computedStats = Statistics::ComputeStatistics({});
+    Statistics:: Stat<float> computedValue;
+    vector<float> data{0.0,3.2,5.4,6.3,7.2};
+    Statistics:: stat<float> computedStats=Statistics:: computeStatistics(computedValue,data)
+    //auto computedStats = Statistics::ComputeStatistics({});
     //All fields of computedStats (average, max, min) must be
     //Use http://www.cplusplus.com/reference/cmath/isnan/
     REQUIRE(std::isnan(computedStats.average));
