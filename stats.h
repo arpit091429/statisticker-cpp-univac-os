@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 
 namespace Statistics {
-    Stats ComputeStatistics(const std::vector<___>& );
+    //Stats ComputeStatistics(const std::vector<___>& );
     //use template cause we use primitive data type
     template <class T>
     struct stat
@@ -16,8 +16,7 @@ namespace Statistics {
     void ComputeAverage(const vector<T>& data,struct stat<T>& computeValue)
     {
         //take value from vector and show average through strcut
-        T sum=0;
-        sum=accumlate(data.begin(),data.end(),0);
+        T sum=accumlate(data.begin(),data.end(),0);
         computeValue.avg=(sum/data.size());
     }
     
