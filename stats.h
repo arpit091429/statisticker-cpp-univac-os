@@ -16,7 +16,8 @@ namespace Statistics {
     void ComputeAverage(const vector<T>& data,struct stat<T>& computeValue)
     {
         //take value from vector and show average through strcut
-        T sum=accumlate(data.begin(),data.end(),0);
+        T sum=0; 
+        sum=accumulate(data.begin(),data.end(),0);
         computeValue.avg=(sum/data.size());
     }
     
