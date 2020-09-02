@@ -2,6 +2,7 @@
 #include <vector>
 #include<math.h>
 #include<bits/stdc++.h>
+#include<numeric>
 using namespace std;
 
 namespace Statistics
@@ -36,7 +37,14 @@ namespace Statistics
 	
 	template <typename T>
 	struct Stat<T> ComputeStatistics(struct Stat<T> &computedValues, const vector<T>& data)
-    {
+        {
+		if(data.size() == 0)
+	    	{
+			computedValues.average = numeric_limits<T>::quiet_NaN();
+			computedValues.Max = numeric_limits<T>::quiet_NaN();
+			computedValues.Min = numeric_limits<T>::quiet_NaN();
+			return computedValues;
+		}
 		ComputeAverage(computedValues,data);
 		ComputeMax(computedValues,data);
 		ComputeMin(computedValues,data);
