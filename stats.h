@@ -4,39 +4,39 @@
 namespace Statistics {
     //Stats ComputeStatistics(const std::vector<___>& );
     //use template cause we use primitive data type
-    template <class T>
+    template <typename T>
     struct stat
     {
-        T avg;
-        T max;
-        T min;
+        T Avg;
+        T Max;
+        T Min;
     };
     
     template <typename T>
     void ComputeAverage(const vector<T>& data,struct stat<T>& computeValue)
     {
         //take value from vector and show average through strcut
-        T sum=0; 
-        sum=accumulate(data.begin(),data.end(),0);
-        computeValue.avg=(sum/data.size());
+        T Sum=0; 
+        Sum=accumulate( data.begin(), data.end(),0);
+        computeValue.avg=(Sum/data.size());
     }
     
     template <typename T>
     void ComputeMax(const vector<T>& data,struct stat<T>& computeValue)
     {
         //take value from vector and show max through strcut
-        T max=0;
-        max=*max_element(data.begin(),data.end());
-        computeValue.max=max;
+        T Max=0;
+        Max=*max_element( data.begin(), data.end());
+        computeValue.Max=Max;
     }
     
     template <typename T>
     void ComputeMin(const vector<T>& data,struct stat<T>& computeValue)
     {
         //take value from vector and show min through strcut
-        T min=0;
-        min=*min_element(data.begin(),data.end());
-        computeValue.max=max;
+        T Min=0;
+        Min=*min_element( data.begin(), data.end());
+        computeValue.Min=Min;
     }
     
     template<typename T>
