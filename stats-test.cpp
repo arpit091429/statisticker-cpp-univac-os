@@ -5,7 +5,8 @@
 #include <cmath>
 #include<vector>
 
-TEST_CASE("reports average, minimum and maximum") {
+TEST_CASE("reports average, minimum and maximum")
+{
 	Statistics::Stat<float> computedvalues;
 	vector<float> data{1.5, 8.9, 3.2, 4.5};
     Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedvalues,data);
@@ -15,7 +16,8 @@ TEST_CASE("reports average, minimum and maximum") {
     REQUIRE(std::abs(computedstats.Min - 1.5) < epsilon);
 }
 
-TEST_CASE("average is NaN for empty array") {
+TEST_CASE("average is NaN for empty array")
+{
 	 Statistics::Stat<float> computedvalues;
 	vector<float> data{1.5, 8.9, 3.2, 4.5};
     Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedvalues,data);
