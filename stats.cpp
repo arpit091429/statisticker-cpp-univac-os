@@ -6,7 +6,7 @@
 //template<typename T> Statistics::Stat<T,T,T>::Stat(T average,T Max,T min):average(average),Max(Max),Min(Min){}
 //template<typename T> Statistics::Stat Statistics::ComputeStatistics(const std::vector<T>& data)
 Statistics::Stats::Stats(){}
-Statistics::Stats::Stats(float average,float Max,float Min):average(average),Max(Max),Min(Min){}
+Statistics::Stats::Stats(float Average,float Max,float Min):Average(Average),Max(Max),Min(Min){}
 Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& data)
 
 {
