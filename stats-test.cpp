@@ -5,7 +5,7 @@
 #include <cmath>
 TEST_CASE("reports average, minimum and maximum") {
 	Statistics::Stat<float> computedvalues;
-    Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedvalues,{1.5, 8.9, 3.2, 4.5});
+    Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedvalues,{1.5, 8.9, 3.1, 4.5});
     float epsilon = 0.001;
     REQUIRE(std::abs(computedstats.average - 4.525) < epsilon);
     REQUIRE(std::abs(computedstats.Max - 8.9) < epsilon);
