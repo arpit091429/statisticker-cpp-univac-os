@@ -18,8 +18,8 @@ namespace Statistics
 		float average;
 		float Max;
 		float Min;
-		Stat();//empty array
-		Stat(float avg,float max,float min);
+		Stats();//empty array
+		Stats(float avg,float max,float min);
 	};
 	//template<typename T=double>
 	//Stat ComputeStatistics(const std::vector<T>& );
