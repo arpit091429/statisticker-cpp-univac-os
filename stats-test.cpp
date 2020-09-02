@@ -2,31 +2,21 @@
 
 #include "catch.hpp"
 #include "stats.h"
-#include <bits/stdc++.h>
-using namespace std;
-#include<vector>
 #include <cmath>
 
 TEST_CASE("reports average, minimum and maximum") {
-    Statistics:: stat<float> computedValue;
-    vector<float> data{1.0,3.2,5.4,6.3,7.2};
-    Statistics:: stat<float> ComputedStats=Statistics:: ComputeStatistics(data,computedValue);
-    //auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
+	Statistics::Stat<float> computedvalues;
+    Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedvalues,{1.5, 8.9, 3.2, 4.5});
     float epsilon = 0.001;
-    REQUIRE(std::abs(ComputedStats.Avg - 4.525) < epsilon);
-    REQUIRE(std::abs(ComputedStats.Max - 8.9) < epsilon);
-    REQUIRE(std::abs(ComputedStats.Min - 1.5) < epsilon);
+    REQUIRE(std::abs(computedstats.average - 4.525) < epsilon);
+    REQUIRE(std::abs(computedstats.Max - 8.9) < epsilon);
+    REQUIRE(std::abs(computedstats.Min - 1.5) < epsilon);
 }
 
 TEST_CASE("average is NaN for empty array") {
-    Statistics:: stat<float> computedValue;
-    vector<float> data{0.0,3.2,5.4,6.3,7.2};
-    Statistics:: stat<float> ComputedStats=Statistics:: ComputeStatistics(data,computedValue);
-    //auto computedStats = Statistics::ComputeStatistics({});
-    //All fields of computedStats (average, max, min) must be
-    //Use http://www.cplusplus.com/reference/cmath/isnan/
-    REQUIRE(std::isnan(ComputedStats.Avg));
-    REQUIRE(std::isnan(ComputedStats.Max));
-    REQUIRE(std::isnan(ComputedStats.Min));
-    
+	 Statistics::Stat<float> computedvalues;
+    Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedFvalues, {});
+    REQUIRE(isnan(computedstats.average) == true);
+    REQUIRE(isnan(computedstats.Max) == true);
+    REQUIRE(isnan(computedstats.Min) == true);
 }
