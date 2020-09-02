@@ -3,8 +3,6 @@
 #include "catch.hpp"
 #include "stats.h"
 #include <cmath>
-#include<vector>
-
 TEST_CASE("reports average, minimum and maximum")
 {
 	Statistics::Stat<float> computedvalues;
@@ -20,7 +18,7 @@ TEST_CASE("average is NaN for empty array")
 {
 	 Statistics::Stat<float> computedvalues;
 	//vector<float> data{1.5, 8.9, 3.2, 4.5};
-    Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedvalues,{1.5, 8.9, 3.2, 4.5});
+    Statistics::Stat<float> computedstats = Statistics::ComputeStatistics(computedvalues,{});
     REQUIRE(isnan(computedstats.average) == true);
     REQUIRE(isnan(computedstats.Max) == true);
     REQUIRE(isnan(computedstats.Min) == true);
