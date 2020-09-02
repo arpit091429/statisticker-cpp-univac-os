@@ -12,7 +12,7 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& data)
 {
     if(data.size()==0)
     {
-        return Stat(NAN,NAN,NAN);
+        return Stats(NAN,NAN,NAN);
     }
     
     //T maxi=*max_element(data.begin(),data.end());
