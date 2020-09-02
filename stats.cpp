@@ -12,7 +12,7 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& data)
 {
     if(data.size()==0)
     {
-        return Stat(NaN,NaN,NaN);
+        return Stat(NAN,NAN,NAN);
     }
     
     //T maxi=*max_element(data.begin(),data.end());
@@ -21,10 +21,10 @@ Statistics::Stats Statistics::ComputeStatistics(const std::vector<float>& data)
     //T avg=sum/data.size();
     //return Statistics::Stat(avg,maxi,mini);
     float maxi=*max_element(data.begin(),data.end());
-    float mani=*min_element(data.begin(),data.end());
+    float mini=*min_element(data.begin(),data.end());
     float sum=accumulate(data.begin(), data.end() , 0);
     float avg=sum/data.size();
-    return Statistics::Stat(avg,maxi,mini);
+    return Statistics::Stats(avg,maxi,mini);
 
     
 }
