@@ -7,7 +7,7 @@ using namespace std;
 namespace Statistics
 {
     
-	template <class T>
+	template <typename T>
 	struct Stat
     {
 		T average;
