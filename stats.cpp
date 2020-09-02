@@ -2,8 +2,8 @@
 #include<cmath>
 #include<bits/stdc++.h>
 
-template<typenmae T> Statisitcs::Stat::Stat(){}
-template<typenmae T> Statisitcs::Stat<T,T,T>::Stat(T average,T Max,T min):average(average),Max(Max),Min(Min){}
+template<typename T> Statistics::Stat::Stat(){}
+template<typename T> Statistics::Stat<T,T,T>::Stat(T average,T Max,T min):average(average),Max(Max),Min(Min){}
 template<typename T> Statistics::Stat Statistics::ComputeStatistics(const std::vector<T>& data)
 {
     if(data.size()==0)
