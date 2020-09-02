@@ -8,9 +8,9 @@ using namespace std;
 namespace Statistics
 {
     
-	template <typename T>
+	template <typename T=double>	//default
 	struct Stat
-    {
+   	 {
 		T average;
 		T Max;
 		T Min;
