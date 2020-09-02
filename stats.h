@@ -9,46 +9,21 @@ namespace Statistics
 {
     
 	template <typename T=double>	//default
-	struct Stat
+	class Stat
    	 {
+	   public:
 		T average;
 		T Max;
 		T Min;
-	};	
-    
-	template <typename T>
-	void ComputeAverage(struct Stat<T> &computedValues, const vector<T>& data)
-    {
-		T sum = accumulate( data.begin(), data.end(), 0);
-		computedValues.average = (sum / data.size());
-	}
-	
-	template <typename T>
-	void ComputeMax(struct Stat<T> &computedValues, const vector<T>& data)
-    {
-		computedValues.Max = *max_element(data.begin(), data.end());
-	}
-	
-	template <typename T>
-	void ComputeMin(struct Stat<T> &computedValues, const vector<T>& data)
-    {
-		computedValues.Min = *min_element(data.begin(), data.end());
-	}
-	
-	template <typename T>
-	struct Stat<T> ComputeStatistics(struct Stat<T> &computedValues, const vector<T>& data)
-        {
-		if(data.size() == 0)
-	    	{
-			computedValues.average = numeric_limits<T>::quiet_NaN();
-			computedValues.Max = numeric_limits<T>::quiet_NaN();
-			computedValues.Min = numeric_limits<T>::quiet_NaN();
-			return computedValues;
-		}
-		ComputeAverage(computedValues,data);
-		ComputeMax(computedValues,data);
-		ComputeMin(computedValues,data);
-		return computedValues;
-	}
-    
+		
+		Stat();//empty array
+		Stat(T,T,T);
+	};
+	template<typename T=double>
+	Stat ComputeStatistics(const std::vector<T>& );
 }
+//decalartion
+	
+	
+    
+	
