@@ -30,7 +30,7 @@ TEST_CASE("reports average, minimum and maximum") {
 }
 
 TEST_CASE("average is NaN for empty array") {
-    auto computedstats = Statistics::ComputeStatistics({});
+    auto computedStats = Statistics::ComputeStatistics({});
     REQUIRE(isnan(computedStats.average));
     REQUIRE(isnan(computedStats.Max));
     REQUIRE(isnan(computedStats.Min));
