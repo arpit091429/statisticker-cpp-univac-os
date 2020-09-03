@@ -23,7 +23,7 @@ namespace Statistics
 		Stats(T average,T Max,T Min);
 	};
 	template<typename T=double>
-	Stat<T> ComputeStatistics(const std::vector<T>& );
+	Stats<T> ComputeStatistics(const std::vector<T>& );
 	//Stats ComputeStatistics(const std::vector<float>&);
 }
 //decalartion
