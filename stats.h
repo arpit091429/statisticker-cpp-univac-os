@@ -12,7 +12,7 @@ namespace Statistics
 	class Stats
    	 {
 	   public:
-		T average;
+		T Average;
 		T Max;
 		T Min;
 		//float Average;
